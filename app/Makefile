@@ -40,7 +40,7 @@ docker-setup:
 	$(COMPOSE_BASE) run --rm app make setup
 
 docker-test:
-	$(COMPOSE_BASE) up --abort-on-container-exit --exit-code-from app
+	$(COMPOSE_BASE) up --abort-on-container-exit
 
 docker-dev:
 	$(COMPOSE_DEV) up

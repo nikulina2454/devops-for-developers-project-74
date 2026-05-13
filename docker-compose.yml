@@ -1,9 +1,8 @@
 services:
   app:
+    image: ${DOCKER_IMAGE:-nikulina2454/devops-for-developers-project-74}
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.production
     working_dir: /app
-    volumes:
-      - ./app:/app
     command: make test
