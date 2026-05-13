@@ -1,5 +1,5 @@
-COMPOSE_BASE = docker-compose -f ../docker-compose.yml
-COMPOSE_DEV = docker-compose -f ../docker-compose.yml -f ../docker-compose.override.yml
+COMPOSE_BASE = docker compose -f ../docker-compose.yml
+COMPOSE_DEV = docker compose -f ../docker-compose.yml -f ../docker-compose.override.yml
 
 setup: install db-migrate
 
