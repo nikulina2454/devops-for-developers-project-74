@@ -1,10 +1,13 @@
-.PHONY: setup test dev build push down
+.PHONY: setup test ci dev build push down
 
 setup:
 	docker-compose -f docker-compose.yml run --rm app make setup
 
 test:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit
+	$(MAKE) ci
+
+ci:
+	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 dev:
 	docker-compose up
